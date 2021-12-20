@@ -63,6 +63,9 @@ impl Debug for Rotation {
     }
 }
 
+// The rotation/rotation_signs combination include incorrect ones but
+// it works so i don't really care. Could probably cut some time by only using correct ones
+
 const ROTATIONS: [Rotation; 6] = [
     Rotation {
         x_accessor: |p| p.0,
@@ -103,7 +106,7 @@ const ROTATION_SIGNS_LIST: [(i32, i32, i32); 8] = [
 // I know it's probably some of the ugliest and dirtiest code i've written in years...
 
 fn main() {
-    let input_str = read_to_string("demo.txt").unwrap();
+    let input_str = read_to_string("input.txt").unwrap();
     let input: Vec<Vec<Point>> = input_str.split("\n\n")
         .map(parse_scanner)
         .collect();
