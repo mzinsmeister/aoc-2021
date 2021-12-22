@@ -40,6 +40,9 @@ fn main() {
     println!("{}", losing_player_score * die_rolled);
 
 
+    // Pt. 2. I know i could add a cache here to make it way faster but
+    // didn't see a need to do so since it runs in < 1s especially with --release for me
+
     let (p1_wins, p2_wins) = play_game(p1_start as u32 - 1, p2_start as u32 - 1, 0, 0, 1);
     println!("{},{}", p1_wins, p2_wins);
 
